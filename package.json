@@ -1,7 +1,7 @@
 {
-  "name": "class-26-solution",
+  "name": "RESTy",
   "version": "1.0.0",
-  "description": "",
+  "description": "by Harvey Lucas and Roop Hayer",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
