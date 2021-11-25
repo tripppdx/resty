@@ -6,7 +6,7 @@ describe('Testing our form component', () => {
   it('Should use our callback on submit', () => {
     let callback = jest.fn();
 
-    render(<Form onSubmit={callback} />);
+    render(<Form handleApiCall={callback} />);
 
     let button = screen.getByRole('button');
     let input = screen.getByRole('textbox');
