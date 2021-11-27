@@ -17,9 +17,11 @@ form {
         padding: 0.25rem 0.5rem;
         background: #ccc;
 
-        &:hover,
-        &.active {
+        &:hover {
           background: #fff;
+        }
+        &.active {
+          background: orange;
         }
       }
     }
