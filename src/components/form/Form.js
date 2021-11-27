@@ -18,7 +18,7 @@ function Form(props) {
     setUrl(value);
   };
 
-  const [method, setMethod] = useState('');
+  const [method, setMethod] = useState('GET');
 
   const handleSetMethod = e => {
     let { id } = e.target;
