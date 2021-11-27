@@ -4,11 +4,11 @@ import '@testing-library/jest-dom/extend-expect';
 import Results from '../components/results/Results';
 
 describe('testing the results component', () => {
-  it('should render data.text', () => {
-    let dataProp = { text: 'test' };
+  it('should render data.data', () => {
+    let dataProp = { data: 'test' };
 
     render(<Results data={dataProp} />);
     let displayText = screen.getByTestId('data');
-    expect(displayText).toHaveTextContent(dataProp.text);
+    expect(displayText).toHaveTextContent(dataProp.data);
   });
 });

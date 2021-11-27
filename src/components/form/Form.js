@@ -21,10 +21,6 @@ function Form(props) {
   const [method, setMethod] = useState('');
 
   const handleSetMethod = e => {
-    const buttons = document.querySelectorAll('.method-button');
-    buttons.forEach(b => b.classList.remove('active'));
-    e.target.classList.add('active');
-
     let { id } = e.target;
     setMethod(id);
   };
@@ -38,16 +34,16 @@ function Form(props) {
           <button type="submit">GO!</button>
         </label>
         <label onClick={handleSetMethod} className="methods">
-          <span id="GET" className="active method-button">
+          <span id="GET" className={method === 'GET' ? 'active' : ''}>
             GET
           </span>
-          <span id="POST" className="method-button">
+          <span id="POST" className={method === 'POST' ? 'active' : ''}>
             POST
           </span>
-          <span id="PUT" className="method-button">
+          <span id="PUT" className={method === 'PUT' ? 'active' : ''}>
             PUT
           </span>
-          <span id="DELETE" className="method-button">
+          <span id="DELETE" className={method === 'DELETE' ? 'active' : ''}>
             DELETE
           </span>
         </label>
