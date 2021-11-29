@@ -1,9 +1,17 @@
 import React from 'react';
+import './results.scss';
 
 function Results(props) {
   return (
     <section>
-      <pre>{props.data ? JSON.stringify(props.data, undefined, 2) : null}</pre>
+      <pre>
+        <label>"Headers" : </label>
+        {props.data ? JSON.stringify(props.data.headers, undefined, 2) : null}
+      </pre>
+      <pre data-testid="data">
+        <label>"Response" : </label>
+        {props.data ? JSON.stringify(props.data.data, undefined, 2) : null}
+      </pre>
     </section>
   );
 }

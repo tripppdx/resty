@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './app.scss';
-
+import axios from 'axios';
 // Let's talk about using index.js and some other name in the component folder
 // There's pros and cons for each way of doing this ...
 import Header from './components/header/Header';
@@ -18,15 +18,14 @@ class App extends React.Component {
     };
   }
 
-  callApi = requestParams => {
-    // mock output
-    const data = {
-      count: 2,
-      results: [
-        { name: 'fake thing 1', url: 'http://fakethings.com/1' },
-        { name: 'fake thing 2', url: 'http://fakethings.com/2' },
-      ],
-    };
+  callApi = async requestParams => {
+    let method = requestParams.method;
+    const data = await axios({
+      method: requestParams.method,
+      url: requestParams.url,
+    });
+    console.log(data);
+    // console.log(data);
     this.setState({ data, requestParams });
   };
 
