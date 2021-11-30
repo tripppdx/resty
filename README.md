@@ -30,7 +30,7 @@ Our application will be an API testing tool that can be run in any browser, allo
   - Displays the response headers and results separately
   - Both headers and results should be “pretty printed” JSON
 
-### Phase 3 Requirements
+### Phase 3 Requirements - Lab Class 28
 
 In phase 3, we will be connecting RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service GET requests
 
