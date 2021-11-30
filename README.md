@@ -2,19 +2,19 @@
 
 Created by Harvey Lucas and Roop Hayer
 
-## Netlify Deploy URL
+## Deploy URL's
 
-https://cocky-albattani-48a932.netlify.app/
+Netlify: https://cocky-albattani-48a932.netlify.app/
+
+Actions: https://github.com/tripppdx/resty/actions
+
+PR: https://github.com/tripppdx/resty/pull/4
 
 ## Summary of Problem Domain
 
 A browser based API testing tool
 
 Our application will be an API testing tool that can be run in any browser, allowing a user to easily interact with APIs in a familiar interface.
-
-### Phase 2 Requirements - Lab: Class 27
-
-In phase 2, we will be receiving user input in preparation of connecting to live APIs, using the useState() hook in our functional components
 
 - The following user stories detail the major functionality for this phase of the project.
 
@@ -29,6 +29,14 @@ In phase 2, we will be receiving user input in preparation of connecting to live
   - Application fetches data from the URL given, with the method specified
   - Displays the response headers and results separately
   - Both headers and results should be “pretty printed” JSON
+
+### Phase 3 Requirements
+
+In phase 3, we will be connecting RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service GET requests
+
+### Phase 2 Requirements - Lab: Class 27
+
+In phase 2, we will be receiving user input in preparation of connecting to live APIs, using the useState() hook in our functional components
 
 ### Phase 1 Requirements - Lab: Class 26
 
@@ -53,4 +61,5 @@ Refactor the RESTy application as follows:
 
 ## Visual
 
+![RESTy API](./assets/resty-api.png)
 ![RESTy](./assets/resty.png)
