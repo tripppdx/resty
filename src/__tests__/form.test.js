@@ -7,12 +7,16 @@ describe('Testing our form component', () => {
   it('Should use our callback on submit', () => {
     let callback = jest.fn();
 
-    render(<Form handleApiCall={callback} />);
+    render(<Form setFormData={callback} />);
 
     let button = screen.getByRole('button');
     fireEvent.click(button);
 
     expect(callback).toHaveBeenCalled();
-    expect(callback).toHaveBeenCalledWith({ method: 'GET', url: '' });
+    expect(callback).toHaveBeenCalledWith({
+      method: 'GET',
+      url: '',
+      body: null,
+    });
   });
 });

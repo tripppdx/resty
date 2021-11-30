@@ -1,17 +1,24 @@
 import React from 'react';
 import './results.scss';
+import ReactJson from 'react-json-prettify';
 
 function Results(props) {
   return (
     <section>
-      <pre>
-        <label>"Headers" : </label>
-        {props.data ? JSON.stringify(props.data.headers, undefined, 2) : null}
-      </pre>
-      <pre data-testid="data">
-        <label>"Response" : </label>
-        {props.data ? JSON.stringify(props.data.data, undefined, 2) : null}
-      </pre>
+      {props.loading ? (
+        <h1>Loading In Progress</h1>
+      ) : (
+        <>
+          <pre>
+            <label>"Headers" : </label>
+            {props.data ? <ReactJson json={props.data.headers} /> : null}
+          </pre>
+          <pre data-testid="data">
+            <label>"Response" : </label>
+            {props.data ? <ReactJson json={props.data.data} /> : null}
+          </pre>
+        </>
+      )}
     </section>
   );
 }
