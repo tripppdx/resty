@@ -2,27 +2,34 @@ import './form.scss';
 import { useState } from 'react';
 
 function Form(props) {
+  const [url, setUrl] = useState('');
+  const [requestData, setRequestData] = useState(null);
+  const [method, setMethod] = useState('GET');
+
   function handleSubmit(e) {
     e.preventDefault();
     const formData = {
       method: method ? method : 'GET',
       url: url,
+      body: JSON.parse(requestData),
     };
-    props.handleApiCall(formData);
+    props.setFormData(formData);
   }
-
-  const [url, setUrl] = useState('');
 
   const handleSetUrl = e => {
     let { value } = e.target;
     setUrl(value);
   };
 
-  const [method, setMethod] = useState('GET');
-
   const handleSetMethod = e => {
     let { id } = e.target;
     setMethod(id);
+  };
+
+  const handleSetRequest = e => {
+    let { value } = e.target;
+    setRequestData(value);
+    // console.log(value);
   };
 
   return (
@@ -47,6 +54,7 @@ function Form(props) {
             DELETE
           </span>
         </label>
+        <textarea onChange={handleSetRequest} />
       </form>
     </>
   );

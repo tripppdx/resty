@@ -1,46 +1,51 @@
-import React from 'react';
-
+import { useState, useEffect } from 'react';
 import './app.scss';
 import axios from 'axios';
-// Let's talk about using index.js and some other name in the component folder
-// There's pros and cons for each way of doing this ...
+
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Form from './components/form/Form';
 import Results from './components/results/Results';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: null,
-      requestParams: {},
-    };
-  }
+function App(props) {
+  const [data, setData] = useState(null);
+  const [formData, setFormData] = useState({});
+  const [loading, setLoading] = useState(false);
 
-  callApi = async requestParams => {
-    let method = requestParams.method;
-    const data = await axios({
-      method: requestParams.method,
-      url: requestParams.url,
-    });
+  const callApi = formData => {
+    console.log(formData);
+    axios({
+      method: formData.method,
+      url: formData.url,
+      body: formData.body,
+    })
+      .then(response => {
+        setData(response);
+        setLoading(false);
+      })
+      .catch(e => {
+        console.log(e);
+        setLoading(false);
+      });
     console.log(data);
-    // console.log(data);
-    this.setState({ data, requestParams });
+    setData(formData);
   };
 
-  render() {
-    return (
-      <React.Fragment>
-        <Header />
-        <div>Request Method: {this.state.requestParams.method}</div>
-        <div>URL: {this.state.requestParams.url}</div>
-        <Form handleApiCall={this.callApi} />
-        <Results data={this.state.data} />
-        <Footer />
-      </React.Fragment>
-    );
-  }
+  useEffect(() => {
+    setLoading(true);
+    callApi(formData);
+  }, [formData]);
+
+  return (
+    <>
+      <Header />
+      <div>Request Method: {formData.method}</div>
+      <div>URL: {formData.url}</div>
+      <Form handleApiCall={callApi} setFormData={setFormData} />
+      <Results data={data} loading={loading} />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
