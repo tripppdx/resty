@@ -14,9 +14,12 @@ describe('Testing our form component', () => {
 
     expect(callback).toHaveBeenCalled();
     expect(callback).toHaveBeenCalledWith({
-      method: 'GET',
-      url: '',
-      body: null,
+      type: 'UPDATE_FORM_DATA',
+      payload: {
+        method: 'GET',
+        url: '',
+        body: null,
+      },
     });
   });
 });
