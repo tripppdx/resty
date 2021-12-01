@@ -30,6 +30,7 @@ Our application will be an API testing tool that can be run in any browser, allo
   - Displays the response headers and results separately
   - Both headers and results should be “pretty printed” JSON
 
+
 ### Phase 4 Requirements - Lab: Class 29
 
 In phase 4, we will be tracking every API call and storing it in history. The following user story details the major functionality for this phase of the project.
