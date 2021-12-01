@@ -8,7 +8,7 @@ Netlify: https://cocky-albattani-48a932.netlify.app/
 
 Actions: https://github.com/tripppdx/resty/actions
 
-PR: https://github.com/tripppdx/resty/pull/4
+PR: https://github.com/tripppdx/resty/pull/5
 
 ## Summary of Problem Domain
 
@@ -30,7 +30,13 @@ Our application will be an API testing tool that can be run in any browser, allo
   - Displays the response headers and results separately
   - Both headers and results should be “pretty printed” JSON
 
-### Phase 3 Requirements
+### Phase 4 Requirements - Lab: Class 29
+
+In phase 4, we will be tracking every API call and storing it in history. The following user story details the major functionality for this phase of the project.
+
+- As a user, I want to see a list of my previous API calls, so that I can see the results again, quickly
+
+### Phase 3 Requirements - Lab: Class 28
 
 In phase 3, we will be connecting RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service GET requests
 
