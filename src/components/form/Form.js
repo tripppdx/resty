@@ -13,7 +13,11 @@ function Form(props) {
       url: url,
       body: JSON.parse(requestData),
     };
-    props.setFormData(formData);
+    let action = {
+      type: 'UPDATE_FORM_DATA',
+      payload: formData,
+    };
+    props.setFormData(action);
   }
 
   const handleSetUrl = e => {
