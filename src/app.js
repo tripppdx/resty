@@ -93,15 +93,37 @@ function App(props) {
   }, [state.formData]);
 
   return (
-    <>
+    <div>
       <Header />
-      <div>Request Method: {state.formData.method}</div>
-      <div>URL: {state.formData.url}</div>
-      <Form setFormData={dispatch} />
-      <History arrData={state.arrCalls} setFormData={dispatch} />
-      <Results data={state.data} loading={state.loading} />
+      {/* <div>Request Method: {state.formData.method}</div>
+      <div>URL: {state.formData.url}</div> */}
+      <div
+        style={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+        }}
+      >
+        <div
+          style={{
+            width: '40%',
+          }}
+        >
+          <Form setFormData={dispatch} />
+          <History arrData={state.arrCalls} setFormData={dispatch} />
+        </div>
+
+        <div
+          style={{
+            width: '60%',
+          }}
+        >
+          <Results data={state.data} loading={state.loading} />
+        </div>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
