@@ -99,10 +99,13 @@ function App(props) {
       <div>URL: {state.formData.url}</div> */}
       <div
         style={{
-          width: '100%',
+          width: '900px',
+          // height: '900px',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-around',
+          marginLeft: 'auto',
+          marginRight: 'auto',
         }}
       >
         <div
@@ -117,6 +120,7 @@ function App(props) {
         <div
           style={{
             width: '60%',
+            height: '500px',
           }}
         >
           <Results data={state.data} loading={state.loading} />

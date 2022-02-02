@@ -14,11 +14,11 @@ function Results(props) {
           <>
             <pre>
               <label>"Headers" : </label>
-              {props.data ? <ReactJson json={props.data.headers} /> : null}
+              {props.data && <ReactJson json={props.data.headers} />}
             </pre>
             <pre data-testid="data">
               <label>"Response" : </label>
-              {props.data ? <ReactJson json={props.data.data} /> : null}
+              {props.data && <ReactJson json={props.data.data} />}
             </pre>
           </>
         )}
