@@ -93,14 +93,13 @@ function App(props) {
   }, [state.formData]);
 
   return (
-    <div>
+    <>
       <Header />
       {/* <div>Request Method: {state.formData.method}</div>
       <div>URL: {state.formData.url}</div> */}
       <div
         style={{
           width: '900px',
-          // height: '900px',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-around',
@@ -111,6 +110,7 @@ function App(props) {
         <div
           style={{
             width: '40%',
+            marginTop: '50px',
           }}
         >
           <Form setFormData={dispatch} />
@@ -127,7 +127,7 @@ function App(props) {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

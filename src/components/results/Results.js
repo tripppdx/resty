@@ -5,8 +5,6 @@ import ReactJson from 'react-json-prettify';
 function Results(props) {
   return (
     <>
-      <h3>Response</h3>
-
       <section>
         {props.loading ? (
           <h3>Results...</h3>
